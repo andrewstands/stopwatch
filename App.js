@@ -1,18 +1,17 @@
-import { Text, View, StyleSheet } from 'react-native';
-
-// You can import supported modules from npm
+import React from 'react';
+import { View, Text, StyleSheet } from 'react-native';
 import { Card } from 'react-native-paper';
-
-// or any files within the Snack
-import AssetExample from './components/AssetExample';
+import MyStopwatch from './MyStopwatch'; // Importing your stopwatch component
 
 export default function App() {
   return (
     <View style={styles.container}>
-      <Text style={styles.paragraph}>The App updates any time we save!</Text>
-      <Card>
-        <AssetExample />
-      </Card>
+      <Text style={styles.headline}>Stopwatch by Andrew SLB.</Text>
+      <View style={styles.centered}>
+        <Card>
+          <MyStopwatch /> {/* Rendering your stopwatch component */}
+        </Card>
+      </View>
     </View>
   );
 }
@@ -20,14 +19,16 @@ export default function App() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    justifyContent: 'center',
-    backgroundColor: '#ecf0f1',
-    padding: 8,
+    backgroundColor: 'black', // Set background color to black
+    justifyContent: 'center', // Center items vertically
+    alignItems: 'center', // Center items horizontally
   },
-  paragraph: {
-    margin: 24,
-    fontSize: 18,
-    fontWeight: 'bold',
-    textAlign: 'center',
+  headline: {
+    fontSize: 24,
+    color: 'white',
+    marginBottom: 20,
+  },
+  centered: {
+    width: '80%', // Set width of centered content
   },
 });
